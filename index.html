@@ -107,6 +107,24 @@ function categoryKey(name){
   if(key.includes('diet coke'))return 'diet coke';
   return null;
 }
+function storeSearchUrl(store,query){
+  const q=encodeURIComponent(query||'');
+  const urls={
+    'Kroger':`https://www.kroger.com/search?query=${q}`,
+    'Walmart':`https://www.walmart.com/search?q=${q}`,
+    'Amazon':`https://www.amazon.com/s?k=${q}`,
+    'CVS':`https://www.cvs.com/search?searchTerm=${q}`,
+    'Dollar General':`https://www.dollargeneral.com/search?q=${q}`,
+    'Costco':`https://www.costco.com/CatalogSearch?keyword=${q}`
+  };
+  return urls[store]||'#';
+}
+function shopLinks(d,fallbackQuery){
+  const query=d.product||fallbackQuery||'';
+  const url=storeSearchUrl(d.store,query);
+  const storeUrl=storeSearchUrl(d.store,fallbackQuery||query);
+  return `<div class="shoplinks"><a class="shoplink primarylink" href="${url}" target="_blank" rel="noopener">Shop this deal ↗</a><a class="shoplink secondarylink" href="${storeUrl}" target="_blank" rel="noopener">Search ${escapeHtml(d.store)} ↗</a></div>`;
+}
 function getDeals(name,requestedMode='auto'){
   const key=name.toLowerCase().trim();
   const mode=detectMode(name,requestedMode);
