@@ -27,7 +27,7 @@
       <div class="store"><input type="checkbox" id="s-Costco" checked><label for="s-Costco">Costco</label></div>
     </div><div class="notice">Amazon Prime and Costco membership are assumed automatically.</div></section>
 
-    <section class="card"><h2>Add an item</h2><form id="addForm"><div class="row"><input id="name" type="text" placeholder="e.g. toothpaste or Crest 3D White" autocomplete="off"><input id="qty" type="number" min="1" value="1"><select id="unit"><option value="item">item</option><option value="oz">oz</option><option value="lb">lb</option><option value="ct">count</option></select></div><div style="margin-top:8px"><select id="matchMode"><option value="auto">Auto-detect: general or brand-specific</option><option value="general">General item: any acceptable brand</option><option value="exact">Specific brand/product only</option></select></div><div class="actions"><button class="primary" type="submit">Add to list</button></div><div id="addStatus" class="status"></div></form><div class="notice">Demo products and pricing are used until live retailer data is connected. Generic categories return specific products when a demo category exists.</div></section>
+    <section class="card"><h2>Add an item</h2><form id="addForm"><div class="row"><input id="name" type="text" placeholder="e.g. toothpaste or Crest 3D White" autocomplete="off"><input id="qty" type="number" min="1" value="1"><select id="unit"><option value="item">item</option><option value="oz">oz</option><option value="lb">lb</option><option value="ct">count</option></select></div><div style="margin-top:8px"><select id="matchMode"><option value="auto">Auto-detect: general or brand-specific</option><option value="general">General item: any acceptable brand</option><option value="exact">Specific brand/product only</option></select></div><div class="actions"><button class="primary" type="submit">Add to list</button></div><div id="addStatus" class="status"></div></form><div class="notice">Demo pricing is used until live retailer data is connected.</div></section>
 
     <section class="card"><div class="item-head"><div><h2 style="margin-bottom:4px">Shopping list & best deals</h2><div class="muted">Results are ranked by the lowest normalized price — per stick, ounce, pound, count, load, etc.</div></div><button class="primary small" id="compareList" type="button">Compare my list</button></div><div id="items" class="stack" style="margin-top:12px"><div class="muted">Add an item above to compare stores.</div></div></section>
   </div><div class="stack">
@@ -60,22 +60,6 @@ const demoCatalog={
 {store:'Dollar General',brand:'Irish Spring',product:'Irish Spring Original Clean Body Wash 20 oz',price:5.50,size:20,unit:'oz',packCount:1,unitLabel:'oz'},
 {store:'Costco',brand:'Dove Men+Care',product:'Dove Men+Care Body Wash 3-pack, 18 oz each',price:18.99,sale:16.99,size:54,unit:'oz',packCount:3,unitLabel:'oz'}
 ],
-'chips':[
-{store:'Kroger',brand:'Kroger',product:'Kroger Classic Potato Chips 9.5 oz',price:3.49,sale:2.99,size:9.5,unit:'oz',packCount:1,unitLabel:'oz'},
-{store:'Walmart',brand:'Lay\'s',product:"Lay's Classic Potato Chips 8 oz",price:3.98,size:8,unit:'oz',packCount:1,unitLabel:'oz'},
-{store:'Amazon',brand:'Kettle Brand',product:'Kettle Brand Sea Salt Potato Chips 7.5 oz',price:4.79,prime:0.30,size:7.5,unit:'oz',packCount:1,unitLabel:'oz'},
-{store:'CVS',brand:'Lay\'s',product:"Lay's Classic Potato Chips 7.75 oz",price:5.29,coupon:1,size:7.75,unit:'oz',packCount:1,unitLabel:'oz'},
-{store:'Dollar General',brand:'Clover Valley',product:'Clover Valley Original Potato Chips 8 oz',price:2.75,size:8,unit:'oz',packCount:1,unitLabel:'oz'},
-{store:'Costco',brand:'Kirkland Signature',product:'Kirkland Signature Kettle Brand Krinkle Cut Chips 32 oz',price:7.99,sale:6.99,size:32,unit:'oz',packCount:1,unitLabel:'oz'}
-],
-'tortilla chips':[
-{store:'Kroger',brand:'Kroger',product:'Kroger Restaurant Style Tortilla Chips 12 oz',price:3.49,size:12,unit:'oz'},
-{store:'Walmart',brand:'Great Value',product:'Great Value Cantina Style Tortilla Chips 13 oz',price:2.98,size:13,unit:'oz'},
-{store:'Amazon',brand:'Tostitos',product:'Tostitos Restaurant Style Tortilla Chips 12 oz',price:5.49,prime:0.40,size:12,unit:'oz'},
-{store:'CVS',brand:'Tostitos',product:'Tostitos Original Restaurant Style 12 oz',price:5.99,coupon:1,size:12,unit:'oz'},
-{store:'Dollar General',brand:'Clover Valley',product:'Clover Valley Tortilla Chips 12 oz',price:3.00,size:12,unit:'oz'},
-{store:'Costco',brand:'Kirkland Signature',product:'Kirkland Signature Organic Tortilla Chips 40 oz',price:6.99,size:40,unit:'oz'}
-],
 'toothpaste':[{store:'Kroger',brand:'Crest',product:'Crest Complete 5.8 oz',price:4.99,sale:3.99,coupon:1,size:5.8,unit:'oz'},{store:'Walmart',brand:'Colgate',product:'Colgate Cavity Protection 6 oz',price:2.96,size:6,unit:'oz'},{store:'Amazon',brand:'Crest',product:'Crest 3D White 3-pack',price:11.97,prime:1,size:12.3,unit:'oz'},{store:'CVS',brand:'Colgate',product:'Colgate Total 5.1 oz',price:5.49,coupon:2,reward:2,size:5.1,unit:'oz'},{store:'Dollar General',brand:'Crest',product:'Crest Pro-Health 4.6 oz',price:4.5,coupon:1.5,size:4.6,unit:'oz'},{store:'Dollar Tree',brand:'Aim',product:'Aim Cavity Protection 5.5 oz',price:1.25,size:5.5,unit:'oz'},{store:'Aldi',brand:'Dentiguard',product:'Dentiguard Whitening 6 oz',price:2.29,size:6,unit:'oz'},{store:'Costco',brand:'Crest',product:'Crest Advanced 5-pack',price:17.99,sale:14.99,size:26,unit:'oz'}],
 'crest':[{store:'Kroger',brand:'Crest',product:'Crest Complete 5.8 oz',price:4.99,sale:3.99,coupon:1,size:5.8,unit:'oz'},{store:'Walmart',brand:'Crest',product:'Crest 3D White 4.1 oz',price:4.97,size:4.1,unit:'oz'},{store:'Amazon',brand:'Crest',product:'Crest 3D White 3-pack',price:11.97,prime:1,size:12.3,unit:'oz'},{store:'CVS',brand:'Crest',product:'Crest Pro-Health 4.6 oz',price:6.29,coupon:2,reward:2,size:4.6,unit:'oz'},{store:'Dollar General',brand:'Crest',product:'Crest Pro-Health 4.6 oz',price:4.5,coupon:1.5,size:4.6,unit:'oz'},{store:'Costco',brand:'Crest',product:'Crest Advanced 5-pack',price:17.99,sale:14.99,size:26,unit:'oz'}],
 'tide pods':[{store:'Kroger',product:'Tide Pods 42 ct',price:15.99,sale:12.99,coupon:3,size:42,unit:'ct'},{store:'Walmart',product:'Tide Pods 42 ct',price:13.97,size:42,unit:'ct'},{store:'Amazon',product:'Tide Pods 42 ct',price:14.49,prime:1.5,size:42,unit:'ct'},{store:'CVS',product:'Tide Pods 42 ct',price:16.49,coupon:2,reward:3,size:42,unit:'ct'},{store:'Dollar General',product:'Tide Pods 42 ct',price:14.95,coupon:2,size:42,unit:'ct'},{store:'Costco',product:'Tide Pods 104 ct',price:29.99,sale:25.99,size:104,unit:'ct'}],
@@ -95,54 +79,18 @@ function packageDescription(d){const pc=packCount(d),sz=Number(d.size)||1;if(d.u
 function packagesNeeded(it,d){const q=Math.max(1,Number(it.qty)||1);if(it.unit==='oz'&&d.unit==='oz')return Math.ceil(q/(Number(d.size)||1));if(it.unit==='lb'&&d.unit==='lb')return Math.ceil(q/(Number(d.size)||1));if(it.unit==='ct'&&d.unit==='ct')return Math.ceil(q/(Number(d.size)||packCount(d)));return Math.ceil(q/packCount(d))}
 function checkoutFor(it,d){return effective(d)*packagesNeeded(it,d)}
 function detectMode(name,requested){if(requested&&requested!=='auto')return requested;const brands=['crest','colgate','sensodyne','tide','bounty','charmin','dove','gillette','oral-b','old spice'];const n=name.toLowerCase();return brands.some(b=>n.includes(b))?'exact':'general'}
-function categoryKey(name){
-  const key=name.toLowerCase().trim();
-  if(/tortilla\s+chips|corn\s+chips/.test(key))return 'tortilla chips';
-  if(/(^|\s)chips?(\s|$)|potato\s+chips|kettle\s+chips/.test(key))return 'chips';
-  if((key.includes('men')||key.includes("men's")||key.includes('mens'))&&key.includes('body wash'))return 'mens body wash';
-  if(key.includes('body wash'))return 'body wash';
-  if(key.includes('toothpaste'))return 'toothpaste';
-  if(key.includes('paper towel'))return 'paper towels';
-  if(key.includes('tide')&&key.includes('pod'))return 'tide pods';
-  if(key.includes('diet coke'))return 'diet coke';
-  return null;
-}
-function storeSearchUrl(store,query){
-  const q=encodeURIComponent(query||'');
-  const urls={
-    'Kroger':`https://www.kroger.com/search?query=${q}`,
-    'Walmart':`https://www.walmart.com/search?q=${q}`,
-    'Amazon':`https://www.amazon.com/s?k=${q}`,
-    'CVS':`https://www.cvs.com/search?searchTerm=${q}`,
-    'Dollar General':`https://www.dollargeneral.com/search?q=${q}`,
-    'Costco':`https://www.costco.com/CatalogSearch?keyword=${q}`
-  };
-  return urls[store]||'#';
-}
-function shopLinks(d,fallbackQuery){
-  const query=d.product||fallbackQuery||'';
-  const url=storeSearchUrl(d.store,query);
-  const storeUrl=storeSearchUrl(d.store,fallbackQuery||query);
-  return `<div class="shoplinks"><a class="shoplink primarylink" href="${url}" target="_blank" rel="noopener">Shop this deal ↗</a><a class="shoplink secondarylink" href="${storeUrl}" target="_blank" rel="noopener">Search ${escapeHtml(d.store)} ↗</a></div>`;
-}
-function getDeals(name,requestedMode='auto'){
-  const key=name.toLowerCase().trim();
-  const mode=detectMode(name,requestedMode);
-  let deals;
-  if(key.includes('old spice')&&key.includes('deodorant')) deals=demoCatalog['old spice deodorant'];
-  else if(key==='crest'||(key.includes('crest')&&!key.includes('deodorant'))) deals=demoCatalog.crest;
-  else {
-    const cat=categoryKey(name);
-    deals=cat?demoCatalog[cat]:demoCatalog[key];
-  }
-  // Generic searches should surface specific products, not fabricated placeholders.
-  // If the demo catalog doesn't know the category yet, return no demo results.
-  if(!deals) return [];
-  return deals.filter(d=>activeStores().includes(d.store));
-}
+function getDeals(name,requestedMode='auto'){const key=name.toLowerCase().trim();const mode=detectMode(name,requestedMode);let deals;if((key.includes("men")||key.includes("men's")||key.includes("mens"))&&key.includes('body wash'))deals=demoCatalog['mens body wash'];else if(key.includes('body wash'))deals=demoCatalog['body wash'];else if(key.includes('old spice')&&key.includes('deodorant'))deals=demoCatalog['old spice deodorant'];else if(key.includes('toothpaste'))deals=demoCatalog.toothpaste;else if(key.includes('crest'))deals=demoCatalog.crest;else deals=demoCatalog[key];if(!deals){const seed=[...key].reduce((a,c)=>a+c.charCodeAt(0),0);const countish=/deodorant|razor|soap|bar|roll|pod|capsule|battery|brush|sponge/.test(key);deals=STORES.map((s,i)=>{const pc=countish?[1,2,2,1,1,4][i]:1;return{store:s,brand:mode==='exact'?name:'Store/major brand',product:(mode==='exact'?name:name+' option')+(pc>1?` ${pc}-pack`:''),price:+(2.5+((seed+i*13)%1400)/100).toFixed(2),size:countish?pc:1,unit:countish?'ct':'item',packCount:pc,unitLabel:countish?'unit':'item',coupon:i%4===0?1:0,reward:s==='CVS'&&i%2===0?2:0,prime:s==='Amazon'?0.75:0,sale:i%3===0?+(2+((seed+i*7)%900)/100).toFixed(2):undefined}})}return deals.filter(d=>activeStores().includes(d.store))}
+function storeSearchUrl(store,query){const q=encodeURIComponent(query);const urls={
+'Kroger':'https://www.kroger.com/search?query='+q,
+'Walmart':'https://www.walmart.com/search?q='+q,
+'Amazon':'https://www.amazon.com/s?k='+q,
+'CVS':'https://www.cvs.com/search?searchTerm='+q,
+'Dollar General':'https://www.dollargeneral.com/search?q='+q,
+'Costco':'https://www.costco.com/CatalogSearch?dept=All&keyword='+q};return urls[store]||'#'}
+function shopLinks(d,itemName){const exact=storeSearchUrl(d.store,d.product||itemName);const broad=storeSearchUrl(d.store,itemName);return `<div class="shoplinks"><a class="shoplink primarylink" href="${exact}" target="_blank" rel="noopener">Shop this deal ↗</a><a class="shoplink secondarylink" href="${broad}" target="_blank" rel="noopener">Search ${d.store} ↗</a></div>`}
 function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
 function render(){renderItems();renderTrip();renderAlerts()}
-function renderItems(){const root=document.getElementById('items');root.innerHTML='';if(!state.list.length){root.innerHTML='<div class="muted">Add an item above to compare stores.</div>';return}state.list.forEach((it,idx)=>{const deals=getDeals(it.name,it.mode).sort((a,b)=>unitPrice(a)-unitPrice(b));const el=document.createElement('div');el.className='item';let html=`<div class="item-head"><div><div class="item-title">${escapeHtml(it.name)}</div><div class="muted">${detectMode(it.name,it.mode)==='exact'?'Specific product/brand':'Any acceptable brand'} · Need ${it.qty} ${it.unit==='item'?'unit(s)':it.unit}</div></div><div><button class="secondary small" onclick="favoriteItem(${idx})">♡ Alert</button> <button class="danger small" onclick="removeItem(${idx})">Remove</button></div></div>`;if(!deals.length){html+=`<div class="notice" style="font-size:13px">No demo product catalog exists for this category yet. This will be populated from live retailer product data rather than showing made-up placeholder products.</div>`;}deals.forEach((d,j)=>{const pay=effective(d),eff=rewardAdjusted(d),basis=comparisonBasis(d),packs=packagesNeeded(it,d),checkout=checkoutFor(it,d);html+=`<div class="deal"><div><div class="${j===0?'best':''}">${j===0?'★ Best unit value · ':''}${d.store}</div><div><strong>${escapeHtml(d.product||it.name)}</strong></div><div class="muted">Package: ${packageDescription(d)} · <strong>$${unitPrice(d).toFixed(2)} per ${basis.label}</strong></div><div class="muted">You would buy ${packs} package${packs===1?'':'s'} · checkout $${checkout.toFixed(2)}</div>${d.sale?'<span class="chip">Sale</span>':''}${d.coupon?`<span class="chip">Coupon -$${d.coupon.toFixed(2)}</span>`:''}${d.store==='Amazon'&&d.prime?`<span class="chip">Prime -$${d.prime.toFixed(2)}</span>`:''}${d.reward?`<div class="reward">Earn $${d.reward.toFixed(2)} reward → package effective value $${eff.toFixed(2)}</div>`:''}${shopLinks(d,it.name)}</div><div class="price"><div>$${pay.toFixed(2)}</div><div class="muted">package</div></div></div>`});el.innerHTML=html;root.appendChild(el)})}
+function renderItems(){const root=document.getElementById('items');root.innerHTML='';if(!state.list.length){root.innerHTML='<div class="muted">Add an item above to compare stores.</div>';return}state.list.forEach((it,idx)=>{const deals=getDeals(it.name,it.mode).sort((a,b)=>unitPrice(a)-unitPrice(b));const el=document.createElement('div');el.className='item';let html=`<div class="item-head"><div><div class="item-title">${escapeHtml(it.name)}</div><div class="muted">${detectMode(it.name,it.mode)==='exact'?'Specific product/brand':'Any acceptable brand'} · Need ${it.qty} ${it.unit==='item'?'unit(s)':it.unit}</div></div><div><button class="secondary small" onclick="favoriteItem(${idx})">♡ Alert</button> <button class="danger small" onclick="removeItem(${idx})">Remove</button></div></div>`;deals.forEach((d,j)=>{const pay=effective(d),eff=rewardAdjusted(d),basis=comparisonBasis(d),packs=packagesNeeded(it,d),checkout=checkoutFor(it,d);html+=`<div class="deal"><div><div class="${j===0?'best':''}">${j===0?'★ Best unit value · ':''}${d.store}</div><div><strong>${escapeHtml(d.product||it.name)}</strong></div><div class="muted">Package: ${packageDescription(d)} · <strong>$${unitPrice(d).toFixed(2)} per ${basis.label}</strong></div><div class="muted">You would buy ${packs} package${packs===1?'':'s'} · checkout $${checkout.toFixed(2)}</div>${d.sale?'<span class="chip">Sale</span>':''}${d.coupon?`<span class="chip">Coupon -$${d.coupon.toFixed(2)}</span>`:''}${d.store==='Amazon'&&d.prime?`<span class="chip">Prime -$${d.prime.toFixed(2)}</span>`:''}${d.reward?`<div class="reward">Earn $${d.reward.toFixed(2)} reward → package effective value $${eff.toFixed(2)}</div>`:''}${shopLinks(d,it.name)}</div><div class="price"><div>$${pay.toFixed(2)}</div><div class="muted">package</div></div></div>`});el.innerHTML=html;root.appendChild(el)})}
 function bestDealForItem(it,stores=activeStores()){const ds=getDeals(it.name,it.mode).filter(d=>stores.includes(d.store)).sort((a,b)=>unitPrice(a)-unitPrice(b));return ds[0]||null}
 function cheapestCheckoutDeal(it,stores=activeStores()){const ds=getDeals(it.name,it.mode).filter(d=>stores.includes(d.store)).sort((a,b)=>checkoutFor(it,a)-checkoutFor(it,b));return ds[0]||null}
 function planForStores(stores){const lines=[];let total=0;for(const it of state.list){const d=cheapestCheckoutDeal(it,stores);if(!d)return null;const cost=checkoutFor(it,d);total+=cost;lines.push({it,d,cost})}return{stores,lines,total}}
